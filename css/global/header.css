@@ -1,0 +1,75 @@
+/*Estilização do Menu de Navegação*/
+.header-bg {
+  background-color: var(--cor12);
+}
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.header-menu a {
+  color: #ffffff;
+  display: inline-block;
+  padding: 16px 0px;
+  font-size: 18px;
+  position: relative;
+}
+
+/*ESTILIZAÇÃO DOS EFEITOS DOS LINKS DE NAVEGAÇÃO EM DESKTOP*/
+.header-menu a:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: #f4b41a;
+  margin-top: 4px;
+  transition: 0.3s;
+  position: absolute;
+}
+
+.header-menu a:hover::after,
+.header-menu a.ativo::after {
+  width: 100%;
+}
+
+/*DEIXAR O MENU DE NAVEGAÇÃO RESPONSIVO*/
+@media (max-width: 800px) {
+  .header-menu {
+    gap: 20px;
+  }
+  .header-menu a {
+    background: #000000;
+    padding: 12px 16px;
+    border-radius: 4px;
+  }
+
+  /*ESTILIZAÇÃO DOS EFEITOS DOS LINKS DE NAVEGAÇÃO em 800px*/
+  .header-menu a:hover {
+    background: #2e2e2e;
+  }
+
+  .header a:after {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-menu {
+    gap: 12px;
+  }
+  .header-menu a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
